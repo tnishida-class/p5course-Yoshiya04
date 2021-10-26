@@ -20,9 +20,10 @@ function setup() {
       else if((i+j)%2==1 && j>4){
         fill(0,0,0);
       }
-      ellipse(size*i + 12.5 , size *j + 12.5, size);
+      ellipse(size*i + 12.5 , size *j + 12.5, size*0.8);　
     }
   }
 }
 
 // noStrokeは最後に元に戻す　これ忘れない！
+//ellipse(size*i + size / 2 , size *j + size / 2, size);でもいい
