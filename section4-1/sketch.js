@@ -46,7 +46,7 @@ function setup(){
 
   for(let i = 0; i < scores.length; i++){
     const dx = width / scores.length;
-    const h = height * scores[i] / 100;
+    const h = height * scores[i] / 100; //scores[i]*4と一緒
     // BLANK[4] ヒント: 条件分岐を使って色を変更します
     // 最小値だったら何色（if）
     if(scores[i] == largest){
@@ -66,8 +66,11 @@ function setup(){
 
   // BLANK[5] 平均点の線を引きます  上3つのプログラムの中身きちんと理解する必要あり
     fill(0,255,200);
-    rect(0,height-(height*average/100),width,3);
+    rect(0,height-(height*average/100),width,3);　//heigt*(100-avarwge)/100と同じ
+    // line(0,heigt*(100-avarwge)/100,width,heigt*(100-avarwge)/100);でもいける
     text(average.toPrecision(3),0, height-(height*average/100));
     // height-(height*average/100)をheight-(avarage*4)にしてもいける
 }
 }
+// 49の説明
+// heightが400なのに対して、scores[i]は100まで数値だから、グラフにするときは*4している
