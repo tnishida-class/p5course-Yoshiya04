@@ -22,16 +22,26 @@ function calendar(y, m){
 }
 
 function isLeapYear(y){
-  return (y % 4 == 0) && (y % 100 != 0) || (y % 400 == 0);
+  return (y % 4 == 0) && (y % 100 != 0) || (y % 400 == 0);　//!=は≠の意味
 }
 
 function daysInYear(y){
   // BLANK[1]
+  for(let y = 2000; y <= 2100; y++){
+  if(isLeapYear(y)){
+    return 366;
+  }
+  else{
+    return 365;
+  }
+ }
 }
 
 function daysInMonth(y, m){
   if(m == 2){
-    return isLeapYear(y) ? 29 : 28;
+    return isLeapYear(y) ? 29 : 28; //下の２行を省略した形
+    // if(sLeapYear(y)){returen 29;}
+    // else{return 28;}
   }
   else if(m == 4 || m == 6 || m == 9 || m == 11){
     return 30;
